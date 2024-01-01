@@ -24,6 +24,9 @@ jobs:
       - name: build
         run: python build.py
 
+      - name: sdist
+        run: python setup.py sdist
+
       - name: wheel
         run: python setup.py bdist_wheel
 
@@ -31,4 +34,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: package
-          path: package/*
+          path: dist/*
